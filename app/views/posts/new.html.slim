@@ -1,0 +1,11 @@
+= form_for @post do |f|
+  br
+  = f.error_messages
+  br
+  = f.label :name
+  = f.text_field :name
+  br
+  = f.label :content
+  = f.text_area :content
+  br
+  = f.button 'Create post'

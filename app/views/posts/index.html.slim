@@ -1,0 +1,8 @@
+h1
+  'hi'
+= link_to 'Create Post', new_post_path
+
+- @posts.each do |post|
+  = post.name
+  br
+  = post.content

@@ -60,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem  'slim'
 gem 'devise'
 gem "capybara"
+gem 'dynamic_form'
