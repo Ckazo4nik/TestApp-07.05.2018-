@@ -8,12 +8,8 @@ feature 'Create Post', '
 	
 	scenario '#Create post successful' do
 		sign_in(user)
-		visit root_path
-		click_on 'Create Post'
-		fill_in 'Name', with: 'First Post'
-		fill_in 'Content', with: 'First Post bla bla bla'
-		click_on 'Create post'
-		
+		name = "First post"
+		create_post(name)
 		expect(page).to have_content 'Your post was successful created!'
 	end
 	
@@ -22,21 +18,13 @@ feature 'Create Post', '
 			sign_in(user)
 		end
 		scenario 'nil field' do
-			visit root_path
-			click_on 'Create Post'
-			fill_in 'Name', with: nil
-			fill_in 'Content', with: 'First Post bla bla bla'
-			click_on 'Create post'
-			
+			name = nil
+			create_post(name)
 			expect(page).to have_content 'Name can\'t be blank'
 		end
 		scenario 'length field' do
-			visit root_path
-			click_on 'Create Post'
-			fill_in 'Name', with: 'n'
-			fill_in 'Content', with: 'First Post bla bla bla'
-			click_on 'Create post'
-			
+			name = "F"
+			create_post(name)
 			expect(page).to have_content 'Your post was successful created!'
 		end
 	end

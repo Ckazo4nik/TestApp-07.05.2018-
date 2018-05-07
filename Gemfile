@@ -61,3 +61,5 @@ gem  'slim'
 gem 'devise'
 gem "capybara"
 gem 'dynamic_form'
+gem "responders"
+gem 'launchy'

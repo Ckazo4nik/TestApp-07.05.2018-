@@ -14,4 +14,11 @@ module AcceptanceHelper
 		fill_in 'Password confirmation', with: user[:password]
 		click_on 'Sign up'
 	end
+	def create_post(name)
+		visit root_path
+		click_on 'Create Post'
+		fill_in 'Name', with: name
+		fill_in 'Content', with: 'First Post bla bla bla'
+		click_on 'Create post'
+	end
 end
