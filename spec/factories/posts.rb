@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    name 'Bla bla'
+    name 'Blawqe blqweqa'
 	  content 'qwerwqewerwerq'
   end
 end

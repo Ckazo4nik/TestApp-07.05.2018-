@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :destroy, :update]
+  before_action :find_post, only: [:show,:edit, :destroy, :update]
   def index
     respond_with(@posts = Post.all)
   end
@@ -10,6 +10,10 @@ class PostsController < ApplicationController
 
   def new
     respond_with(@post = Post.new)
+  end
+  
+  def edit
+    respond_with(@post)
   end
 
   def create
