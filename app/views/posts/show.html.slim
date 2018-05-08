@@ -7,6 +7,6 @@ br
   p Content:
   = @post.content
 br
-  = link_to "Delete", post_path(@post), method: :delete
+  = link_to "Delete", category_post_path(@post), method: :delete
 br
-  = link_to "Edit", edit_post_path(@post)
+  = link_to "Edit", edit_category_post_path(@post)

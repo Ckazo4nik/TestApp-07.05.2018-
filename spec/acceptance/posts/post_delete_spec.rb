@@ -8,8 +8,7 @@ feature 'Delete post', '
   given(:user2) { FactoryGirl.create(:user) }
   scenario '#Delete post' do
     sign_in(user)
-    post = FactoryGirl.create(:post, user_id: user.id)
-    visit root_path
+    create_post
     click_on 'Delete'
     expect(page).to have_content 'Your post was successful deleted!'
   end

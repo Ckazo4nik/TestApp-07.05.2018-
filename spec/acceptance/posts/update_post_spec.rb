@@ -9,7 +9,6 @@ feature 'Update post', '
   scenario '#Update post successful' do
     sign_in(user)
     create_post('sdfasdf')
-    visit root_path
     click_on 'Edit'
     fill_in 'Name', with: 'Test3'
     click_on 'Save post'
@@ -17,15 +16,14 @@ feature 'Update post', '
   end
   describe '#Update post failed' do
     scenario 'not visible link' do
-      sign_in(user2)
-      visit root_path
-      post = FactoryGirl.create(:post, user_id: user.id)
+	    sign_in(user)
+      create_post
+	    visit root_path
       expect(page).to_not have_link 'Edit'
     end
     scenario 'field is nil' do
       sign_in(user)
-      create_post('sdfasdf')
-      visit root_path
+      create_post
       click_on 'Edit'
       fill_in 'Name', with: nil
       click_on 'Save post'

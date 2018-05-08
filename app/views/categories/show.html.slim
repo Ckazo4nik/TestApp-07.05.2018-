@@ -1,0 +1,27 @@
+br
+  b Name:
+  = @category.name
+br
+  p Description:
+  = @category.description
+
+= link_to "Create Post", new_category_post_path(@category)
+
+- @category.posts.each do |post|
+  br
+  = image_tag post.image.url(:thumb) if post.image.url
+  br
+  = link_to post.name, category_post_path(@category, post)
+  br
+  = post.content
+  br
+  - if user_signed_in?
+    - if post.user_id == current_user.id
+      = link_to "Delete", category_post_path(@category, post), method: :delete
+      br
+      = link_to "Edit", edit_category_post_path(@category, post)
+  br
+/ br
+/   = link_to "Delete", post_path(@post), method: :delete
+/ br
+/   = link_to "Edit", edit_post_path(@post)

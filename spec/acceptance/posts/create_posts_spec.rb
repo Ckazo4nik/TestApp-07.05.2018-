@@ -5,6 +5,7 @@ feature 'Create Post', '
 	create posts
 ' do
 	given(:user) { FactoryGirl.create(:user)}
+	given(:category) { FactoryGirl.create(:category) }
 	
 	scenario '#Create post successful' do
 		sign_in(user)
