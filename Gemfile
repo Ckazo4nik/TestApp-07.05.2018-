@@ -63,3 +63,5 @@ gem "capybara"
 gem 'dynamic_form'
 gem "responders"
 gem 'launchy'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"

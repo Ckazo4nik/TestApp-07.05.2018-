@@ -1,2 +1,12 @@
-= @post.name
-= @post.content
+br
+  = image_tag @post.image.url(:thumb) if @post.image.url
+br
+  b Name:
+  = @post.name
+br
+  p Content:
+  = @post.content
+br
+  = link_to "Delete", post_path(@post), method: :delete
+br
+  = link_to "Edit", edit_post_path(@post)

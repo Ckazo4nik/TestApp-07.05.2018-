@@ -1,14 +1,17 @@
-h1
-  'hi'
-= link_to 'Create Post', new_post_path
+br
+  = link_to 'Create Post', new_post_path
 
 - @posts.each do |post|
+  br
+  = image_tag post.image.url(:thumb) if post.image.url
   br
   = post.name
   br
   = post.content
   br
-  - if post.user_id == current_user.id
-    = link_to "Delete", post_path(post), method: :delete
-    br
-    = link_to "Edit", edit_post_path(post)
+  - if user_signed_in?
+    - if post.user_id == current_user.id
+      = link_to "Delete", post_path(post), method: :delete
+      br
+      = link_to "Edit", edit_post_path(post)
+  br

@@ -1,0 +1,15 @@
+= form_for @post do |f|
+  br
+  = f.error_messages
+  br
+    = f.label :name
+    br
+    = f.text_field :name
+  br
+    = f.label :content
+    br
+    = f.text_area :content
+  br
+    = f.file_field :image
+  br
+   = f.button 'Save post'
