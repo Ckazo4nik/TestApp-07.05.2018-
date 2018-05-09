@@ -5,3 +5,6 @@
     = link_to category.name, category_path(category)
   br
     = category.description
+  br
+    = link_to 'Delete', category_path(category), method: :delete
+    = link_to 'Edit', edit_category_path(category)

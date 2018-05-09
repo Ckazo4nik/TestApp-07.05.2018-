@@ -10,4 +10,9 @@ feature 'Create category', '
 		create_category
 		expect(page).to have_content 'Your category was successful create'
 	end
+	scenario '#Create faile' do
+		sign_in(user)
+		create_category(nil)
+		expect(page).to have_content 'Name can\'t be blank'
+	end
 end

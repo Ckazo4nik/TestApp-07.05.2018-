@@ -16,9 +16,11 @@ feature 'Update post', '
   end
   describe '#Update post failed' do
     scenario 'not visible link' do
-	    sign_in(user)
+	    sign_in(user2)
       create_post
-	    visit root_path
+	    click_on "Log out"
+	    sign_in(user)
+	    click_on 'Name'
       expect(page).to_not have_link 'Edit'
     end
     scenario 'field is nil' do
