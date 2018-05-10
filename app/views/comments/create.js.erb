@@ -1,0 +1,2 @@
+var parentSelector = '<%= @parent.is_a?(Category) ? ".category" : ".posts" %>';
+$(parentSelector + ' .comments').html('<%= j render "list", parent: @parent %>');

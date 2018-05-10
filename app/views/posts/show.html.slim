@@ -10,3 +10,6 @@ br
   = link_to "Delete", category_post_path(@post), method: :delete
 br
   = link_to "Edit", edit_category_post_path(@post)
+  p Comments
+  .comments
+    = render 'comments/list', parent: @post, parent_p: @post.category

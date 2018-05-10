@@ -15,4 +15,7 @@ feature 'Create category', '
 		create_category(nil)
 		expect(page).to have_content 'Name can\'t be blank'
 	end
+	scenario 'Create Comment' do
+		sign_in(user)
+	end
 end

@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
-	has_many :posts
-	validates :name, presence: true
+  validates :name, presence: true
+
+  has_many :posts
+  has_many :comments, as: :commentable
 end

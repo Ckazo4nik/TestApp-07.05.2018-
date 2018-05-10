@@ -65,3 +65,5 @@ gem "responders"
 gem 'launchy'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem 'jquery-rails'
+gem 'remotipart', '~> 1.2'
