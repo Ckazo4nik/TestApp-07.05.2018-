@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     if @category.delete
-      respond_with(:ok, location: -> { categories_path }, notice: 'Your category was successful deleted!')
+      respond_with(:ok, location: -> { root_path }, notice: 'Your category was successful deleted!')
     end
   end
 

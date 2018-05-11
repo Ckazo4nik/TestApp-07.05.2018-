@@ -9,7 +9,7 @@ feature 'Create Post', '
 	
 	scenario '#Create post successful' do
 		sign_in(user)
-		name = "First post"
+		name = "First. post"
 		create_post(name)
 		expect(page).to have_content 'Your post was successful created!'
 	end
@@ -19,14 +19,14 @@ feature 'Create Post', '
 			sign_in(user)
 		end
 		scenario 'nil field' do
-			name = nil
+			name = ""
 			create_post(name)
 			expect(page).to have_content 'Name can\'t be blank'
 		end
 		scenario 'length field' do
 			name = "F"
 			create_post(name)
-			expect(page).to have_content 'Your post was successful created!'
+			expect(page).to have_content 'Name please enter keywords in correct format'
 		end
 	end
 end

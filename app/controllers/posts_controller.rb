@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   
   def update
     if @post.update(post_params)
-      respond_with @category, location: -> { @category }, notice: "Your post was successful updated!"
+      respond_with @post, location: -> { category_post_path(@post.category, @post) }, notice: "Your post was successful updated!"
     else
       render :new
     end

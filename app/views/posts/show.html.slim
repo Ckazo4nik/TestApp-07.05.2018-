@@ -1,15 +1,16 @@
-br
-  = image_tag @post.image.url(:thumb) if @post.image.url
-br
-  b Name:
-  = @post.name
-br
-  p Content:
-  = @post.content
-br
-  = link_to "Delete", category_post_path(@post), method: :delete
-br
-  = link_to "Edit", edit_category_post_path(@post)
-  p Comments
-  .comments
-    = render 'comments/list', parent: @post, parent_p: @post.category
+.posts
+  br
+    = image_tag @post.image.url(:thumb) if @post.image.url
+  br
+    b Name:
+    = @post.name
+  br
+    p Content:
+    = @post.content
+  br
+    = link_to "Delete", category_post_path(@post.category, @post), method: :delete
+  br
+    = link_to "Edit", edit_category_post_path(@post.category, @post)
+    p Comments
+    .comments
+      = render 'comments/list', parent: @post, parent_p: @post.category

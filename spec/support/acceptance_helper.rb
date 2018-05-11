@@ -16,16 +16,16 @@ module AcceptanceHelper
     click_on 'Sign up'
   end
 
-  def create_post( name="Name")
+  def create_post(name="First. post")
     create_category
     visit root_path
-    click_on 'Name'
+    click_on 'Category. first'
     click_on 'Create Post'
     fill_in 'Name', with: name
     fill_in 'Content', with: 'First Post bla bla bla'
     click_on 'Save post'
   end
-  def create_category(name="Name")
+  def create_category(name="Category. first")
     visit root_path
     click_on 'Create Category'
     fill_in "Name", with: name
