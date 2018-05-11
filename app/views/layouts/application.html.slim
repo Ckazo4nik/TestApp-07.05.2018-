@@ -18,6 +18,6 @@ html
       = link_to "Sign_in", new_user_session_path
       = link_to "Sig_up", new_user_registration_path
     h1
-      b Hi
-      = current_user.last_name  if user_signed_in?
+      b Hi,
+      h1 = current_user.last_name  if user_signed_in?
     = yield
